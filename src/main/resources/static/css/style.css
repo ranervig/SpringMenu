@@ -1,0 +1,27 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+body {
+	background-color: #E3E3E3;
+	margin: auto;
+	text-align: center;
+	font-family: 'Goldman', cursive;
+}
+
+header {
+	background-color: #283747;
+	color: #DE354C;
+}
+
+.menu {
+	width: 40%;
+	margin: auto;
+	color: #932432;
+}
+
+.input{
+	width:30%;
+	margin: auto;
+	text-align: left;
+	color:#283747;
+}

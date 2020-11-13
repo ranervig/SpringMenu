@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="/css/style.css">
 <meta charset="UTF-8">
 <title>Add New Item</title>
 </head>
 <body>
-	<form th:object="${newMenuItem}" th:action="@{/update/{id}(id=${newMenuItem.id})}"
-		method="post">
-		<p>
-			<label> Name: <input name="name" size="20" th:field="*{name}"></label>
-		</p>
-		<p>
-			<label> Description: <input name="description" size="20" th:field="*{description}"></label>
-		</p>
-		<p>
-			<label> Options: <input name="options" size="20" th:field="*{options}"></label>
-		</p>
-		<p>
-			<label> Price: $<input name="price" size="20" th:field="*{price}"></label>
-		</p>
-		<input name="submit" type="submit" value="submit" />
-	</form>
+	<header>
+		<h1>Item Info</h1>
+	</header>
+	<div class="input">
+		<form th:object="${newMenuItem}"
+			th:action="@{/update/{id}(id=${newMenuItem.id})}" method="post">
+			<p>
+				<label> Name: <input name="name" size="20"
+					th:field="*{name}"></label>
+			</p>
+			<p>
+				<label> Description: <input name="description" size="20"
+					th:field="*{description}"></label>
+			</p>
+			<p>
+				<label> Options: <input name="options" size="20"
+					th:field="*{options}"></label>
+			</p>
+			<p>
+				<label> Price: $<input name="price" size="20"
+					th:field="*{price}"></label>
+			</p>
+			<input name="submit" type="submit" value="submit" />
+		</form>
+	</div>
 </body>
 </html>

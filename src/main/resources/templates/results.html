@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="/css/style.css">
 <meta charset="UTF-8">
 <title>View Full Menu</title>
 </head>
 <body>
+	<header>
+		<h1>Menu</h1>
+	</header>
 	<div class="menu">
 		<ol>
 			<li th:each="currentItem : ${menuItems}" class="item"><span
-				th:text="${currentItem.id}"></span> <span
-				th:text="${currentItem.name}"></span> <span
-				th:text="'$' + ${currentItem.price.toString()}"></span><br />
+				th:text="${currentItem.name}"></span> ................................... $<span
+				th:text="${currentItem.price}"></span><br />
 				<p th:text="${currentItem.description}">No description available</p>
 				<p th:text="${currentItem.options}">No options available</p>
 
 				<p>
-					<a th:href="@{/edit/{id}(id=${currentItem.id})}">Edit</a> <a
+					id: <span th:text="${currentItem.id}"></span> <a
+						th:href="@{/edit/{id}(id=${currentItem.id})}">Edit</a> <a
 						th:href="@{/delete/{id}(id=${currentItem.id})}">Delete</a>
 				</p></li>
 		</ol>
+		<p>
+			<a href="../inputItem">Add a new menu item</a>
+		</p>
 	</div>
-	<a href="../inputItem">Add a new menu item</a>
+
 </body>
 </html>
